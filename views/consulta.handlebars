@@ -1,0 +1,30 @@
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Tela de Consulta</h1>
+        <table class="table table-striped table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th class="text-center">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each posts}}
+                {{#dataValues}}
+                <tr>
+                    <td>{{nome}}</td>
+                    <td>{{endereco}}</td>
+                    <td class="text-center">
+                        <a href="/editar/{{id}}" class="btn btn-sm btn-success">Editar</a>
+                        <a href="/excluir/{{id}}" class="btn btn-sm btn-danger ml-2">Excluir</a>
+                    </td>
+                </tr>
+                {{/dataValues}}
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
